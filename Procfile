@@ -1,2 +1,2 @@
-web: bin/boot
+web: node server/index.js
 heroku ps:scale web=1
