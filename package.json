@@ -5,11 +5,11 @@
   "engines": {
     "node": "14.2.0"
   },
-    "scripts": {
-        "start": "node server/index.js",
-        "build": "cd react-ui/ && npm install && npm run build",
-        "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
-    },
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd react-ui/ && npm install && npm run build",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
   "cacheDirectories": [
     "node_modules",
     "react-ui/node_modules"
