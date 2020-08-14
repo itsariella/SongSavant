@@ -91,7 +91,6 @@ class Select extends React.Component {
         this.setState({
             songsList: playlist.songs,
             categoryClicked: true,
-            categoryId: category.id,
             clicked: true,
             isEmptyState: false,
             isLogged: false,
