@@ -30,5 +30,17 @@
   "license": "MIT",
   "devDependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-remove-console"
+        ]
+      }
+    }
   }
 }
