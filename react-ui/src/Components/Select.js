@@ -203,7 +203,7 @@ class Select extends React.Component {
         return (
         <div>
             {this.state.user ?
-            [<Title/>, <div> <a href = "https://forms.gle/7Xdumj6rnRcgSvm96"> feedback</a> </div>
+            [<Title/>, <div> <a href = "https://forms.gle/7Xdumj6rnRcgSvm96"> feedback</a> </div>,
             <div> {!this.state.clicked ?
              <p>
                 <h1 id="welcome">
