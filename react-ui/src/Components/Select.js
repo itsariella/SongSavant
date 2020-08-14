@@ -240,7 +240,7 @@ class Select extends React.Component {
             </div>] : [<img id ="logo" src={require("../images/Song-SavantLogo.png")}/>, <button id="signIn" onClick={() => {
             window.location = window.location.href.includes('localhost') 
               ? 'http://localhost:8888/login' 
-              : 'https://song-savant-backend.herokuapp.com' }
+              : 'https://song-savant.herokuapp.com/login' }
           }
           >Sign in with Spotify</button>]
             }
