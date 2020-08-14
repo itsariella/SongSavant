@@ -247,7 +247,7 @@ class Select extends React.Component {
                     {!this.state.renderTimer && !this.state.gameOver && this.state.categoryClicked && this.state.clicked ? <div>Game starts in...<Timer limit={3} ></Timer></div> : null}
                     {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} 
                     {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay" onClick={() => {
-                        this.handlePlaylist(this.playAgain()) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
+                        this.handlePlaylist(this.playAgain(this.state.chosenPlaylist)) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
                             window.location = window.location.href.includes('localhost') 
                               ? 'http://localhost:8888/login' 
                               : 'https://song-savant.herokuapp.com/login' }} > Different Playlist</button></div> : null}
