@@ -99,7 +99,6 @@ class Select extends React.Component {
             renderTimer: false,
             category: "",
             fetched: true,
-            myCategories: ["hiphop", "pop", "toplists", "country", "rock", "rnb", "alternative", "dance", "decades", "christian", "kpop", "blues", "classical","indie","jazz","soul","punk","metal","reggae","funk"],
             gameOver:false,
             chosenPlaylist: playlist,
             playlists: []
