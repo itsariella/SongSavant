@@ -33,8 +33,8 @@ class Select extends React.Component {
     }
 
     componentDidMount(){
-       let parsed = queryString.parse(window.location.hash); //gets access token
-       let accessToken = parsed.access_token;
+       let parsed = queryString.parse(window.location.search); //gets access token
+       let accessToken = parsed.get('access_token');
       
        if(!accessToken)
         return
@@ -46,14 +46,6 @@ class Select extends React.Component {
                name: data.display_name
            }
        }))
-
-       if(!accessToken)
-       {
-           console.log("no token");
-       }
-       else{
-           console.log("toke retrieved");
-       }
 
        fetch('https://api.spotify.com/v1/browse/categories?&limit=50', {
          headers:{ 'Authorization': 'Bearer ' + accessToken
