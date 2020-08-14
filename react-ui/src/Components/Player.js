@@ -101,7 +101,7 @@ export default class Player extends React.Component {
             currentSongUrl:songs[myCount].url,
             currentSongName: songs[myCount].name,
             
-        }, () => console.log(songs[myCount].name))
+        })
 
         console.log(this.known);
         console.log(this.missed)
