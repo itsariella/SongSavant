@@ -216,7 +216,7 @@ class Select extends React.Component {
             {
                 <div id = "game">
                     {!this.state.renderTimer && !this.state.gameOver && this.state.categoryClicked && this.state.clicked ? <div>Game starts in...<Timer limit={3} ></Timer></div> : null}
-                    {/* {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} */}
+                    {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} 
                     {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay"> Play Again </button> <button id = "diffPlaylist"> Different Playlist</button></div> : null}
                     {this.state.clicked && this.state.renderPlayer ? <Player elementId = "myPlayer" playlist= {this.state.chosenPlaylist} selectedPlaylist = {this.state.songsList}/> : null} 
                 </div>
@@ -240,7 +240,7 @@ class Select extends React.Component {
             </div>] : [<img id ="logo" src={require("../images/Song-SavantLogo.png")}/>, <button id="signIn" onClick={() => {
             window.location = window.location.href.includes('localhost') 
               ? 'http://localhost:8888/login' 
-              : 'heroku link here' }
+              : 'https://song-savant-backend.herokuapp.com' }
           }
           >Sign in with Spotify</button>]
             }
