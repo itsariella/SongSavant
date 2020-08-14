@@ -37,7 +37,7 @@ app.get('/callback', function(req, res) {
   request.post(authOptions, function(error, response, body) {
     var access_token = body.access_token
     let uri = process.env.FRONTEND_URI || 'http://localhost:3000'
-    res.redirect(uri + access_token)
+    res.redirect(uri + '?access_token=' + access_token)
   })
 })
 if (process.env.NODE_ENV === 'production') {
@@ -49,6 +49,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
   });
+
 }
 
 
