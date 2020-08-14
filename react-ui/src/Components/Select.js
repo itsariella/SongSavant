@@ -30,6 +30,7 @@ class Select extends React.Component {
 
         this.handlePlaylist = this.handlePlaylist.bind(this);
         this.handleCategory = this.handleCategory.bind(this);
+        this.playAgain = this.playAgain.bind(this);
     }
 
     componentDidMount(){
@@ -84,6 +85,34 @@ class Select extends React.Component {
             this.setState({renderTimer:false, gameOver: true})
         }.bind(this),123000)
         
+    }
+
+    playAgain(playlist) {
+        this.setState({
+            songsList: playlist.songs,
+            categoryClicked: true,
+            categoryId: category.id,
+            clicked: true,
+            isEmptyState: false,
+            isLogged: false,
+            catIsLogged: false,
+            renderPlayer: false,
+            renderTimer: false,
+            category: "",
+            fetched: true,
+            myCategories: ["hiphop", "pop", "toplists", "country", "rock", "rnb", "alternative", "dance", "decades", "christian", "kpop", "blues", "classical","indie","jazz","soul","punk","metal","reggae","funk"],
+            gameOver:false,
+            chosenPlaylist: playlist,
+            playlists: []
+        })
+
+        setTimeout(function() { //Start the timer
+            this.setState({renderPlayer: true, renderTimer: true}) //After 1 second, set render to true
+        }.bind(this), 3000)
+
+        setTimeout(function() {
+            this.setState({renderTimer:false, gameOver: true})
+        }.bind(this),123000)
     }
 
     handleCategory(category) {
@@ -218,7 +247,7 @@ class Select extends React.Component {
                     {!this.state.renderTimer && !this.state.gameOver && this.state.categoryClicked && this.state.clicked ? <div>Game starts in...<Timer limit={3} ></Timer></div> : null}
                     {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} 
                     {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay" onClick={() => {
-                        this.handlePlaylist(this.chosenPlaylist()) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
+                        this.handlePlaylist(this.playAgain()) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
                             window.location = window.location.href.includes('localhost') 
                               ? 'http://localhost:8888/login' 
                               : 'https://song-savant.herokuapp.com/login' }} > Different Playlist</button></div> : null}
