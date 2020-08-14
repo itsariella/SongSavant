@@ -23,6 +23,14 @@
   color: firebrick;
 }
 
+#feedback {
+  text-shadow: 2px 2px black;
+  text-align:left;
+  margin: 20px;
+  font-size: 15px;
+  
+}
+
 #welcome{
   color:whitesmoke;
   text-shadow: 2px 2px black;
