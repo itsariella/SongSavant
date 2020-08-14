@@ -47,6 +47,14 @@ class Select extends React.Component {
            }
        }))
 
+       if(!accessToken)
+       {
+           console.log("no token");
+       }
+       else{
+           console.log("toke retrieved");
+       }
+
        fetch('https://api.spotify.com/v1/browse/categories?&limit=50', {
          headers:{ 'Authorization': 'Bearer ' + accessToken
        }}).then(response => response.json())
