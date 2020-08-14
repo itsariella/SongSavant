@@ -33,8 +33,8 @@ class Select extends React.Component {
     }
 
     componentDidMount(){
-       let parsed = window.location.search; //gets access token
-       let accessToken = parsed.silce(1).split("=")[1];
+        let parsed = queryString.parse(window.location.search); //gets access token
+        let accessToken = parsed.access_token;
       
        if(!accessToken)
         return
@@ -88,8 +88,8 @@ class Select extends React.Component {
 
     handleCategory(category) {
         
-        let parsed = window.location.search; //gets access token
-        let accessToken = parsed.silce(1).split("=")[1];
+        let parsed = queryString.parse(window.location.search); //gets access token
+        let accessToken = parsed.access_token;
         this.setState({
             categoryClicked: true,
             categoryId: category.id,
