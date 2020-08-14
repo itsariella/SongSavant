@@ -49,16 +49,6 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
   });
-
-  app.get('/login', function(req, res) {
-    res.redirect('https://accounts.spotify.com/authorize?' +
-      querystring.stringify({
-        response_type: 'code',
-        client_id: process.env.SPOTIFY_CLIENT_ID,
-        scope: 'user-read-private user-read-email',
-        redirect_uri
-      }))
-  })
 }
 
 
