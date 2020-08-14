@@ -5,7 +5,7 @@ class Title extends React.Component {
     render() {
         return (
           <div id = "Title">
-              <h1> <a href='http://song-savant.herokuapp.com'> SONG SAVANT </a> </h1>
+              <h1> <a href='http://song-savant.herokuapp.com/login'> SONG SAVANT </a> </h1>
           </div>
           
         );
