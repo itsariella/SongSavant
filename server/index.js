@@ -42,23 +42,14 @@ app.get('/callback', function(req, res) {
 })
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
-  app.use(express.static('client/build'));
+  app.use(express.static('react-ui/build'));
 
   // Express serve up index.html file if it doesn't recognize route
   const path = require('path');
-  app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
   });
 
-  app.get('/login', function(req, res) {
-    res.redirect('https://accounts.spotify.com/authorize?' +
-      querystring.stringify({
-        response_type: 'code',
-        client_id: process.env.SPOTIFY_CLIENT_ID,
-        scope: 'user-read-private user-read-email',
-        redirect_uri
-      }))
-  })
 }
 
 

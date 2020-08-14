@@ -30,11 +30,12 @@ class Select extends React.Component {
 
         this.handlePlaylist = this.handlePlaylist.bind(this);
         this.handleCategory = this.handleCategory.bind(this);
+        this.playAgain = this.playAgain.bind(this);
     }
 
     componentDidMount(){
-       let parsed = queryString.parse(window.location.hash); //gets access token
-       let accessToken = parsed.access_token;
+        let parsed = queryString.parse(window.location.search); //gets access token
+        let accessToken = parsed.access_token;
       
        if(!accessToken)
         return
@@ -86,9 +87,35 @@ class Select extends React.Component {
         
     }
 
+    playAgain(playlist) {
+        this.setState({
+            songsList: playlist.songs,
+            categoryClicked: true,
+            clicked: true,
+            isEmptyState: false,
+            isLogged: false,
+            catIsLogged: false,
+            renderPlayer: false,
+            renderTimer: false,
+            category: "",
+            fetched: true,
+            gameOver:false,
+            chosenPlaylist: playlist,
+            playlists: []
+        })
+
+        setTimeout(function() { //Start the timer
+            this.setState({renderPlayer: true, renderTimer: true}) //After 1 second, set render to true
+        }.bind(this), 3000)
+
+        setTimeout(function() {
+            this.setState({renderTimer:false, gameOver: true})
+        }.bind(this),123000)
+    }
+
     handleCategory(category) {
         
-        let parsed = queryString.parse(window.location.hash); //gets access token
+        let parsed = queryString.parse(window.location.search); //gets access token
         let accessToken = parsed.access_token;
         this.setState({
             categoryClicked: true,
@@ -216,8 +243,12 @@ class Select extends React.Component {
             {
                 <div id = "game">
                     {!this.state.renderTimer && !this.state.gameOver && this.state.categoryClicked && this.state.clicked ? <div>Game starts in...<Timer limit={3} ></Timer></div> : null}
-                    {/* {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} */}
-                    {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay"> Play Again </button> <button id = "diffPlaylist"> Different Playlist</button></div> : null}
+                    {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} 
+                    {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay" onClick={() => {
+                        this.handlePlaylist(this.playAgain(this.state.chosenPlaylist)) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
+                            window.location = window.location.href.includes('localhost') 
+                              ? 'http://localhost:8888/login' 
+                              : 'https://song-savant.herokuapp.com/login' }} > Different Playlist</button></div> : null}
                     {this.state.clicked && this.state.renderPlayer ? <Player elementId = "myPlayer" playlist= {this.state.chosenPlaylist} selectedPlaylist = {this.state.songsList}/> : null} 
                 </div>
             }
@@ -240,7 +271,7 @@ class Select extends React.Component {
             </div>] : [<img id ="logo" src={require("../images/Song-SavantLogo.png")}/>, <button id="signIn" onClick={() => {
             window.location = window.location.href.includes('localhost') 
               ? 'http://localhost:8888/login' 
-              : 'heroku link here' }
+              : 'https://song-savant.herokuapp.com/login' }
           }
           >Sign in with Spotify</button>]
             }
