@@ -102,6 +102,8 @@ a{
 
 #prevImg {
   border-radius: 5px;
+  height: 150px;
+  width: 150x;
 }
 
 .songCard{
