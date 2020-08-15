@@ -23,6 +23,14 @@
   color: firebrick;
 }
 
+#feedback {
+  text-shadow: 2px 2px black;
+  text-align:left;
+  margin: 20px;
+  font-size: 15px;
+  
+}
+
 #welcome{
   color:whitesmoke;
   text-shadow: 2px 2px black;
@@ -77,6 +85,8 @@ a:hover {
 
 body {
   background-color: #F0FFFF;
+  height:100vh;
+  min-height:100%;
 }
 
 a{
@@ -128,22 +138,28 @@ a{
   text-align:center;
   font-size:20px;
   border-radius: 40px;
-  width: 50%;
-  height: 50px;
+  width: fit-content;
+  height:fit-content;
   padding: 12px 28px;
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
-  margin: 50px;
+  left: 50%;
+  margin-top:5px;
+  transform: translate(-50%, 0);
+  display:inline-block;
 }
 
 #logo {
   margin-left:auto;
-  max-width:50%;
-  max-height:10%;
+  max-width:90%;
+  max-height:100%;
   width: auto;
   height: auto;
   position:relative;
   margin-top:60px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display:inline-block;
 
 }
 
@@ -181,6 +197,8 @@ a{
   height: 30px;
   width: 100px;
   padding: 5px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 #diffPlaylist {
@@ -189,6 +207,8 @@ a{
   height: 30px;
   width: 150px;
   padding: 5px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 #myPlayer {
@@ -200,3 +220,30 @@ a{
   display:inline-block;
 }
 
+.frontContainer {
+  height: 50%;
+  width: 50%;
+  display: grid;
+  gap: 0px;
+  grid-template-columns: (1,1fr);
+  grid-template-rows: auto 40px;
+  transform: translate(40%, 0%);
+}
+
+input {
+    border-radius: 50px;
+    border: 2px solid black;
+    padding: 10px; 
+    width: 250px;
+    height: 15px;   
+    margin-top:10px;
+}
+
+#next {
+  border-radius:40px;
+  font-size:12px;
+  height: 35px;
+  width: 60px;
+  padding: 10px;
+  margin-top:10px;
+}

@@ -203,7 +203,7 @@ class Select extends React.Component {
         return (
         <div>
             {this.state.user ?
-            [<Title/>,
+            [<Title/>, <div id="feedback"> <a href = "https://forms.gle/7Xdumj6rnRcgSvm96"> got feedback?</a> </div>,
             <div> {!this.state.clicked ?
              <p>
                 <h1 id="welcome">
@@ -268,12 +268,12 @@ class Select extends React.Component {
             }
             
              
-            </div>] : [<img id ="logo" src={require("../images/Song-SavantLogo.png")}/>, <button id="signIn" onClick={() => {
+            </div>] : <div className="frontContainer"> <img id ="logo" src={require("../images/Song-SavantLogo.png")}/> <button id="signIn" onClick={() => {
             window.location = window.location.href.includes('localhost') 
               ? 'http://localhost:8888/login' 
               : 'https://song-savant.herokuapp.com/login' }
           }
-          >Sign in with Spotify</button>]
+          >Sign in with Spotify</button></div>
             }
         </div>
         );

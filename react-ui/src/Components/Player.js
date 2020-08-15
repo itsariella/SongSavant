@@ -101,7 +101,7 @@ export default class Player extends React.Component {
             currentSongUrl:songs[myCount].url,
             currentSongName: songs[myCount].name,
             
-        }, () => console.log(songs[myCount].name))
+        })
 
         console.log(this.known);
         console.log(this.missed)
@@ -154,14 +154,14 @@ export default class Player extends React.Component {
                             </audio>
                             {/* <PlayTimer song={this.state.currentSongUrl}/> */}
                             <form onSubmit = {(e) => this.nextTrack(e,songs)}>
-                                <input
+                                <input id = "gameInput"
                                     type = "text"
                                     ref={input => {this.myInput = input;}} 
                                     placeholder="Enter song name"
                                     autoFocus>
 
                                 </input>
-                                <button type="submit"> submit </button>
+                                <button id="next" type="submit"> next </button>
                             </form> 
                             <div>{this.state.submitted? this.state.correct ? 
                                 <h5> Good job!</h5>: <h5> Not quite... </h5> : null}
