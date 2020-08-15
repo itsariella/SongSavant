@@ -34,6 +34,7 @@
 #welcome{
   color:whitesmoke;
   text-shadow: 2px 2px black;
+  margin-bottom: 5px;
 }
 
 .Heading {
@@ -53,6 +54,7 @@
     color:white;
     padding: 10px;
     margin: 10px;
+    margin-top:5px;
 }
 .App-header {
   background-color: #282c34;
@@ -102,12 +104,15 @@ a{
 
 #prevImg {
   border-radius: 5px;
+  height: 150px;
+  width: 150x;
+  margin-top: 5px;
 }
 
 .songCard{
   color:white;
   text-shadow: 2px 2px black;
-  margin: 20px;
+  margin: 15px;
   width: 175px;
   align-items:center;
   display: inline-block;
@@ -143,9 +148,10 @@ a{
   padding: 12px 28px;
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
-  left: 50%;
+  left: 20%;
+  margin: auto;
   margin-top:5px;
-  transform: translate(-50%, 0);
+  transform: translate(-20%, 0);
   display:inline-block;
 }
 
@@ -237,6 +243,7 @@ input {
     width: 250px;
     height: 15px;   
     margin-top:10px;
+    margin-bottom:10px;
 }
 
 #next {
@@ -246,4 +253,5 @@ input {
   width: 60px;
   padding: 10px;
   margin-top:10px;
+  margin-bottom:10px;
 }
