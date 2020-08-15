@@ -74,6 +74,7 @@ class Select extends React.Component {
             isEmptyState: false,
             songsList: playlist.songs,
             chosenPlaylist: playlist,
+            imageUrl:playlist.imageUrl,
             playlists: []
         });
 
