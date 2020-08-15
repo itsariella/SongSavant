@@ -161,7 +161,7 @@ export default class Player extends React.Component {
                                     autoFocus>
 
                                 </input>
-                                <button id="replay" type="submit"> submit </button>
+                                <button id="next" type="submit"> next </button>
                             </form> 
                             <div>{this.state.submitted? this.state.correct ? 
                                 <h5> Good job!</h5>: <h5> Not quite... </h5> : null}
