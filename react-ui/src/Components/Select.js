@@ -218,7 +218,7 @@ class Select extends React.Component {
             Nice Job, {this.state.user.name.split(" ").shift()}! 
             {console.log(this.state.user)}
             </h1>
-            <div className = "songCard" ><img src={this.state.imageUrl}/> </div> </div>
+            <img className = "songCard" src={this.state.imageUrl}/> </div>
             : null} 
 
             {!this.state.clicked ? <Directions></Directions> : null}
