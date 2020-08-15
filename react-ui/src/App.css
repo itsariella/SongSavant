@@ -148,10 +148,10 @@ a{
   padding: 12px 28px;
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
-  left: 10%;
+  left: 25%;
   margin: auto;
   margin-top:5px;
-  transform: translate(-10%, 0);
+  transform: translate(-25%, 0);
   display:inline-block;
 }
 
