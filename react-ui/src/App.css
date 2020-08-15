@@ -139,6 +139,7 @@ a{
   font-size:20px;
   border-radius: 40px;
   width: fit-content;
+  height:fit-content;
   height: 50px;
   padding: 12px 28px;
   font-family: Helvetica, Arial, sans-serif;
@@ -151,7 +152,7 @@ a{
 
 #logo {
   margin-left:auto;
-  max-width:100%;
+  max-width:90%;
   max-height:100%;
   width: auto;
   height: auto;
@@ -217,12 +218,11 @@ a{
 }
 
 .frontContainer {
-  height: 100%;
+  height: 50%;
   width: 50%;
   display: grid;
   gap: 0px;
   grid-template-columns: (1,1fr);
   grid-template-rows: auto 40px;
-  left: 50%;
-  transform: translate(50%, 0%);
+  transform: translate(40%, 0%);
 }
