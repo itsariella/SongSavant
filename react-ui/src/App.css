@@ -227,9 +227,9 @@ a{
 }
 
 input {
-  border-radius: 25px;
+    border-radius: 50px;
     border: 2px solid black;
-    padding: 20px; 
+    padding: 10px; 
     width: 200px;
     height: 15px;   
 }
