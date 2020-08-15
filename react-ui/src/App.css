@@ -149,6 +149,7 @@ a{
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
   left: 50%;
+  margin: auto;
   margin-top:5px;
   transform: translate(-50%, 0);
   display:inline-block;
