@@ -212,10 +212,12 @@ class Select extends React.Component {
                 </h1>
             </p>   
             : this.state.gameOver ? 
+            <div>
             <h1 id="welcome">
             Nice Job, {this.state.user.name.split(" ").shift()}! 
             {console.log(this.state.user)}
-            </h1> 
+            </h1>
+            <img src={this.state.imageUrl}/> </div>
             : null} 
 
             {!this.state.clicked ? <Directions></Directions> : null}
