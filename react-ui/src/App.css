@@ -140,7 +140,6 @@ a{
   border-radius: 40px;
   width: fit-content;
   height:fit-content;
-  height: 50px;
   padding: 12px 28px;
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
@@ -225,4 +224,8 @@ a{
   grid-template-columns: (1,1fr);
   grid-template-rows: auto 40px;
   transform: translate(40%, 0%);
+}
+
+input {
+  height:50px;
 }

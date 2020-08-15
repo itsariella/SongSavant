@@ -154,7 +154,7 @@ export default class Player extends React.Component {
                             </audio>
                             {/* <PlayTimer song={this.state.currentSongUrl}/> */}
                             <form onSubmit = {(e) => this.nextTrack(e,songs)}>
-                                <input
+                                <input id = "gameInput"
                                     type = "text"
                                     ref={input => {this.myInput = input;}} 
                                     placeholder="Enter song name"
