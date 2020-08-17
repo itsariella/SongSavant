@@ -183,8 +183,9 @@ export default class Player extends React.Component {
             
      
             return [
-                    <div className = "badge">
-                        <h2> You are a... {this.state.badge}</h2>
+                    <div className = "badge"> { !this.state.gameOver ?
+                        <div> <h2> You are a... </h2> <h1> {this.state.badge} </h1> </div>
+                         : null }
                     </div>,
                     <h2> Score: {this.state.score} </h2>, 
                     <div> { !this.state.gameOver ?
