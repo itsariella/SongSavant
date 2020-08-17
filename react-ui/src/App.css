@@ -211,8 +211,8 @@ a{
 #diffPlaylist {
   border-radius:40px;
   font-size:15px;
-  height: 30px;
-  width: 150px;
+  height: fit-content;
+  width: fit-content;
   padding: 5px;
   margin-top:10px;
   margin-bottom:10px;
@@ -250,8 +250,8 @@ input {
 #next {
   border-radius:40px;
   font-size:12px;
-  height: 35px;
-  width: 60px;
+  height: fit-content;
+  width: fit-content;
   padding: 10px;
   margin-top:10px;
   margin-bottom:10px;
