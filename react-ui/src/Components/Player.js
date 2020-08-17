@@ -82,11 +82,48 @@ export default class Player extends React.Component {
         if( input === matchesSong)
         {
             this.known.push(this.state.currentSongName);
-            this.setState({
-                score: this.state.score + 1,
-                correct: true
-            
-            }, () => console.log(this.state.score));
+            let tempScore=this.state.score + 1;
+            if(tempScore >= 20) {
+                this.setState({
+                    badge: "Savant",
+                    score: this.state.score + 1,
+                    correct: true
+                
+                }, () => console.log(this.state.score));
+            }
+            else if(tempScore >= 16) {
+                this.setState({
+                    badge: "Virtuoso",
+                    score: this.state.score + 1,
+                    correct: true
+                
+                }, () => console.log(this.state.score));
+            }
+            else if(tempScore >= 11) {
+                this.setState({
+                    badge: "Expert",
+                    score: this.state.score + 1,
+                    correct: true
+                
+                }, () => console.log(this.state.score));
+            }
+            else if(tempScore >=6 ) {
+                this.setState({
+                    badge: "Song Wiz",
+                    score: this.state.score + 1,
+                    correct: true
+                
+                }, () => console.log(this.state.score));
+            }
+            else {
+                this.setState({
+                    badge: "Novice",
+                    score: this.state.score + 1,
+                    correct: true
+                
+                }, () => console.log(this.state.score));
+            }
+           
         } 
         else {
             this.missed.push(this.state.currentSongName);
@@ -146,6 +183,9 @@ export default class Player extends React.Component {
             
      
             return [
+                    <div className = "badge">
+                        <h2> You are a... {this.state.badge}</h2>
+                    </div>,
                     <h2> Score: {this.state.score} </h2>, 
                     <div> { !this.state.gameOver ?
                         <div id= "player">
@@ -175,14 +215,14 @@ export default class Player extends React.Component {
                     <div> {this.state.gameOver? 
                         <div className = "container">
                             <div className = "list-container">
-                                <h3> Songs you knew </h3>
+                                <h3> Songs You Knew </h3>
                                 <ul className = "list"> {this.known.map((song) => (
                                     <li> {song}</li>
                                 ))}
                                 </ul>
                             </div>
                             <div className = "list-container">
-                                <h3> Songs you missed </h3>
+                                <h3> Songs You Missed </h3>
                                 <ul className = "list"> {this.missed.map((song) => (
                             <li> {song}</li>
                          ))}
