@@ -64,11 +64,10 @@ git push heroku branch-name:master
 * **Ariella Navarro** - *Frontend/Backend* - [Ariella Navarro](https://github.com/itsariella)
 * **Serena So** - *Game design/Graphics contributor* - [Serena So](https://github.com/soitsrena)
 
-See also the list of [contributors](https://github.com/song-savant-frontend/contributors) who participated in this project.
 
 ## Acknowledgments
 
-* Jonny Kalambay's tutorial, helping us get started with it all (https://medium.com/@jonnykalambay/now-playing-using-spotifys-awesome-api-with-react-7db8173a7b13)
-* DevTips on Youtube for Spotify API tutorials (https://www.youtube.com/channel/UCyIe-61Y8C4_o-zZCtO4ETQ)
+* Inspiration from Jonny Kalambay's medium article, helping us get started with it all (https://medium.com/@jonnykalambay/now-playing-using-spotifys-awesome-api-with-react-7db8173a7b13)
+* Spotify API tutorials by DevTips on Youtube (https://www.youtube.com/channel/UCyIe-61Y8C4_o-zZCtO4ETQ)
 * The following repo, for deploying subdirectories onto Heroku (https://github.com/mars/heroku-cra-node)
 
