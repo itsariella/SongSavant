@@ -64,7 +64,7 @@ git push heroku branch-name:master
 * **Ariella Navarro** - *Frontend/Backend* - [Ariella Navarro](https://github.com/itsariella)
 * **Serena So** - *Game design/Graphics contributor* - [Serena So](https://github.com/soitsrena)
 
-See also the list of [contributors](https://github.com/your/song-savant-frontend) who participated in this project.
+See also the list of [contributors](https://github.com/song-savant-frontend/contributors) who participated in this project.
 
 ## Acknowledgments
 
