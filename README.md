@@ -42,7 +42,11 @@ Open another terminal, navigate to server folder, install dependencies, start se
 ```
 cd desktop
 cd song-savant-frontend
+export SPOTIFY_CLIENT_ID=YourClientIdHere
+export SPOTIFY_CLIENT_SECRET=YourClientSecretHere
 cd server
+export SPOTIFY_CLIENT_ID=YourClientIdHere
+export SPOTIFY_CLIENT_SECRET=YourClientSecretHere
 npm install
 npm start
 
