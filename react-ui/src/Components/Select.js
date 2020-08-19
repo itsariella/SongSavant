@@ -269,6 +269,15 @@ class Select extends React.Component {
                     </button>
                 )
             }
+
+{
+                <div>
+                    {this.state.categoryClicked && this.state.isEmptyState ? <button id = "diffPlaylist" onClick={() => {
+                            window.location = window.location.href.includes('localhost') 
+                              ? 'http://localhost:8888/login' 
+                              : 'https://song-savant.herokuapp.com/login' }} > Back to Categories</button> : null}
+                </div>
+            }
             
              
             </div>] : <div className="frontContainer"> <img id ="logo" src={require("../images/Song-SavantLogo.png")}/> <button id="signIn" onClick={() => {
