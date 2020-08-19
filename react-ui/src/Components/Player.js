@@ -115,7 +115,7 @@ export default class Player extends React.Component {
                 
                 }, () => console.log(this.state.score));
             }
-            else {
+            else if(tempScore >= 0) {
                 this.setState({
                     badge: "Novice",
                     score: this.state.score + 1,
