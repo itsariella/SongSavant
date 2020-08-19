@@ -17,6 +17,7 @@ export default class Player extends React.Component {
           correct: false,
           submitted: false,
           gameOver:false,
+          badge: "Novice"
         };
         this.handleAudio = this.handleAudio.bind(this);
         this.nextTrack = this.nextTrack.bind(this);
