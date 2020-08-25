@@ -42,8 +42,6 @@ Open another terminal, navigate to server folder, install dependencies, start se
 ```
 cd desktop
 cd song-savant-frontend
-export SPOTIFY_CLIENT_ID=YourClientIdHere
-export SPOTIFY_CLIENT_SECRET=YourClientSecretHere
 cd server
 export SPOTIFY_CLIENT_ID=YourClientIdHere
 export SPOTIFY_CLIENT_SECRET=YourClientSecretHere
@@ -67,6 +65,8 @@ git push heroku branch-name:master
 
 * **Ariella Navarro** - *Frontend/Backend* - [Ariella Navarro](https://github.com/itsariella)
 * **Serena So** - *Game design/Graphics contributor* - [Serena So](https://github.com/soitsrena)
+* **Kimberley Fan** - *Frontend* - [Kimberley Fan](https://github.com/kimberleyfan)
+
 
 
 ## Acknowledgments
