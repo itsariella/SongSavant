@@ -36,7 +36,7 @@ class Select extends React.Component {
     componentDidMount(){
         let parsed = queryString.parse(window.location.search); //gets access token
         let accessToken = parsed.access_token;
-      
+
        if(!accessToken)
         return
        fetch('https://api.spotify.com/v1/me', {
@@ -85,7 +85,7 @@ class Select extends React.Component {
         setTimeout(function() {
             this.setState({renderTimer:false, gameOver: true})
         }.bind(this),123000)
-        
+
     }
 
     playAgain(playlist) {
@@ -115,7 +115,7 @@ class Select extends React.Component {
     }
 
     handleCategory(category) {
-        
+
         let parsed = queryString.parse(window.location.search); //gets access token
         let accessToken = parsed.access_token;
         this.setState({
@@ -124,7 +124,7 @@ class Select extends React.Component {
             myCategories: ["removeCategory"],
             fetched: true
         });
-        
+
         let url = 'https://api.spotify.com/v1/browse/categories/' + category.id + '/playlists?&limit=50'
         console.log(url)
 
@@ -133,21 +133,21 @@ class Select extends React.Component {
                 }).then(response => response.json())
                 .then(playlistData => {
                     console.log(playlistData)
-                    
+
                     let playlists = playlistData.playlists.items
-                    let trackDataPromises = playlists.map(playlist  => { 
-                        let responsePromise = fetch(playlist.tracks.href, { 
+                    let trackDataPromises = playlists.map(playlist  => {
+                        let responsePromise = fetch(playlist.tracks.href, {
                         headers: {'Authorization' : 'Bearer ' + accessToken}
                         })
                         let trackDataPromise = responsePromise
                         .then(response => response.json()).catch((error) => {console.log(error)})
                         return trackDataPromise
                     })
-                    let allTracksDataPromises 
+                    let allTracksDataPromises
                         = Promise.all(trackDataPromises)
-                        /*get song names, error may occur if track is null? */ 
+                        /*get song names, error may occur if track is null? */
                     let playlistPromise = allTracksDataPromises.then(trackDatas => {
-        
+
                         trackDatas.forEach((trackData, i) => {
 
                             console.log(trackData)
@@ -155,12 +155,12 @@ class Select extends React.Component {
                             console.log(trackData.items)
                             playlists[i].trackDatas = trackData.items
                                 .filter(function(item) {return item.track != null })
-                                .map(item => item.track)  
+                                .map(item => item.track)
                                 .map((trackData) => ({
                                 name: trackData.name,
                                 url: trackData.preview_url,
                                 artists: trackData.artists
-                            }))                  
+                            }))
                         })
                         return playlists
                     })
@@ -178,24 +178,24 @@ class Select extends React.Component {
                 .catch((error) => {
                     console.log(error)
                 })
-                
+
     }
 
     render() {
 
-        let categoryToRender = 
-        this.state.user && 
-        this.state.categories 
+        let categoryToRender =
+        this.state.user &&
+        this.state.categories
             ? this.state.categories.filter(category => {
                 let matchesCategory = this.state.myCategories.includes(category.id)
                 console.log(matchesCategory)
                 return matchesCategory
             }) : []
 
-        
-        let playlistToRender = 
-        this.state.user && 
-        this.state.playlists 
+
+        let playlistToRender =
+        this.state.user &&
+        this.state.playlists
             ? this.state.playlists.filter(playlist => {
                 let matchesPlaylist = this.state.playlists
                 return matchesPlaylist
@@ -208,18 +208,18 @@ class Select extends React.Component {
             <div> {!this.state.clicked ?
              <p>
                 <h1 id="welcome">
-                    Welcome, {this.state.user.name.split(" ").shift()}! 
+                    Welcome, {this.state.user.name.split(" ").shift()}!
                     {console.log(this.state.user)}
                 </h1>
-            </p>   
-            : this.state.gameOver ? 
+            </p>
+            : this.state.gameOver ?
             <div>
             <h1 id="welcome">
-            Nice Job, {this.state.user.name.split(" ").shift()}! 
+            Nice Job, {this.state.user.name.split(" ").shift()}!
             {console.log(this.state.user)}
             </h1>
             <img id = "prevImg" src={this.state.imageUrl}/> </div>
-            : null} 
+            : null}
 
             {!this.state.clicked ? <Directions></Directions> : null}
 
@@ -230,38 +230,38 @@ class Select extends React.Component {
                 </div>
             }
 
-            { this.state.categoryClicked ? playlistToRender.map(playlist => 
+            { this.state.categoryClicked ? playlistToRender.map(playlist =>
                 <button className="songCard" onClick={() => this.handlePlaylist(playlist)}>
 
                     {this.state.clicked && !this.state.isLogged ? this.setState(
-                        { 
+                        {
                             isLogged: true,
                         }): console.log("no playlists")
                     }
                     <Card card={playlist} />
                 </button>
             ) : console.log("unclicked")}
-                
+
 
             {
                 <div id = "game">
                     {!this.state.renderTimer && !this.state.gameOver && this.state.categoryClicked && this.state.clicked ? <div>Game starts in...<Timer limit={3} ></Timer></div> : null}
-                    {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null} 
+                    {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null}
                     {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay" onClick={() => {
                         this.handlePlaylist(this.playAgain(this.state.chosenPlaylist)) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
-                            window.location = window.location.href.includes('localhost') 
-                              ? 'http://localhost:8888/login' 
+                            window.location = window.location.href.includes('localhost')
+                              ? 'http://localhost:8888/login'
                               : 'https://song-savant.herokuapp.com/login' }} > Different Playlist</button></div> : null}
-                    {this.state.clicked && this.state.renderPlayer ? <Player elementId = "myPlayer" playlist= {this.state.chosenPlaylist} selectedPlaylist = {this.state.songsList}/> : null} 
+                    {this.state.clicked && this.state.renderPlayer ? <Player elementId = "myPlayer" playlist= {this.state.chosenPlaylist} selectedPlaylist = {this.state.songsList}/> : null}
                 </div>
             }
-            
-            {categoryToRender.map(category => 
-                
+
+            {categoryToRender.map(category =>
+
                     <button className="songCard" onClick={() => this.handleCategory(category)}>
-    
+
                         {this.state.categoryClicked && !this.state.catIsLogged ? this.setState(
-                            { 
+                            {
                                 catIsLogged: true,
                             }): console.log(category)
                         }
@@ -273,16 +273,16 @@ class Select extends React.Component {
 {
                 <div>
                     {this.state.categoryClicked && this.state.isEmptyState ? <button id = "diffPlaylist" onClick={() => {
-                            window.location = window.location.href.includes('localhost') 
-                              ? 'http://localhost:8888/login' 
+                            window.location = window.location.href.includes('localhost')
+                              ? 'http://localhost:8888/login'
                               : 'https://song-savant.herokuapp.com/login' }} > Back to Categories</button> : null}
                 </div>
             }
-            
-             
+
+
             </div>] : <div className="frontContainer"> <img id ="logo" src={require("../images/Song-SavantLogo.png")}/> <button id="signIn" onClick={() => {
-            window.location = window.location.href.includes('localhost') 
-              ? 'http://localhost:8888/login' 
+            window.location = window.location.href.includes('localhost')
+              ? 'http://localhost:8888/login'
               : 'https://song-savant.herokuapp.com/login' }
           }
           >Sign in with Spotify</button></div>
