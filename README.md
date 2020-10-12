@@ -1,7 +1,6 @@
 # Song Savant
 
-This is actually the repository for both frontend and backend of Song-Savant.
-(The project was originally in another repository, but I had to reformat for production and the entire project ended up in this repo).
+This is the repository for both frontend and backend of Song-Savant.
 The frontend utilizes create-react-app and Spotify API, and the backend uses NodeJS and Express. We use npm as our package manager.
 
 ## Getting Started
