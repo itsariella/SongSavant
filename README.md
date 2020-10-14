@@ -24,7 +24,7 @@ git clone https://github.com/itsariella/song-savant-frontend.git
 Install dependencies in root folder
 
 ```
-cd song-savant-frontend
+cd SongSavant (name of unzipped folder)
 npm install
 ```
 
@@ -40,7 +40,7 @@ Open another terminal, navigate to server folder, install dependencies, start se
 
 ```
 cd desktop
-cd song-savant-frontend
+cd SongSavant (name of unzipped folder)
 cd server
 export SPOTIFY_CLIENT_ID=YourClientIdHere
 export SPOTIFY_CLIENT_SECRET=YourClientSecretHere
