@@ -191,7 +191,7 @@ export default class Player extends React.Component {
                     <h2> Score: {this.state.score} </h2>,
                     <div> { !this.state.gameOver ?
                         <div id= "player">
-                            <audio className="audioPlayer" controls autoPlay src = {this.state.currentSongUrl} onEnded=
+                            <audio className="audioPlayer" controls autoplay src = {this.state.currentSongUrl} onEnded=
                                 {(e) => this.nextTrack(e,songs)}> {console.log(this.state.currentSongUrl)}
                             </audio>
                             {/* <PlayTimer song={this.state.currentSongUrl}/> */}
