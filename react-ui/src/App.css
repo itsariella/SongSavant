@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   margin-top: 0 !important;
-  background-image: url(./images/Song-SavantBackground.jpg);
+  background-color: orange;
   height: 100%;
   width: 100%;
   overflow: scroll;
@@ -76,15 +76,6 @@ a:hover {
   text-shadow: 2px 2px white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body {
   background-color: #F0FFFF;
   height:100vh;
@@ -100,19 +91,6 @@ a{
   font-size: 40px;
   color: #e1c699;
   height: 50px;
-}
-
-
-@-webkit-keyframes stroke {
-  100% {
-    stroke-dashoffset: -($dash + $dash-gap) * $max;
-  }
-}
-
-@keyframes stroke {
-  100% {
-    stroke-dashoffset: -($dash + $dash-gap) * $max;
-  }
 }
 
 #game {
@@ -167,34 +145,25 @@ a{
   padding: 12px 28px;
   font-family: Helvetica, Arial, sans-serif;
   position: relative;
-  left: 20%;
   margin: auto;
-  margin-top:5px;
-  transform: translate(-20%, 0);
+  margin-top:20px;
   display:inline-block;
 }
 
 #logo {
-  margin-left:auto;
-  max-width:90%;
-  max-height:100%;
+  margin:auto;
+  max-width:75%;
+  max-height: 100%;
   width: auto;
   height: auto;
   position:relative;
   margin-top:60px;
-  left: 50%;
-  transform: translate(-50%, 0);
   display:inline-block;
 
 }
 .song-name{
   margin: 4px;
   font-size: 15px;
-}
-@for $i from 1 through totalCount{
-  .song-name:nth-child($i) {
-    animation-delay: 5px;
-}
 }
 
 .list {
@@ -322,11 +291,12 @@ transition: all 0.4s ease 0s;
 .frontContainer {
   height: 50%;
   width: 50%;
+  max-height: 600px;
   display: grid;
   gap: 0px;
   grid-template-columns: (1,1fr);
   grid-template-rows: auto 40px;
-  transform: translate(40%, 0%);
+  transform: translate(50%, 0%);
 }
 
 input {
