@@ -84,7 +84,7 @@ class Select extends React.Component {
 
         setTimeout(function() {
             this.setState({renderTimer:false, gameOver: true})
-        }.bind(this),1230000)
+        }.bind(this),123000)
 
     }
 
