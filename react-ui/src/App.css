@@ -185,6 +185,10 @@ a{
 
 }
 
+.score {
+  margin: 10px;
+}
+
 .list-container {
   margin:20px;
   width: 800px;

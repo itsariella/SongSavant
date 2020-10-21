@@ -1,6 +1,9 @@
 import React from "react"
 import Sidebar from "react-sidebar";
 import PlayTimer from './PlayTimer';
+import Iframe from 'react-iframe'
+import SpotifyPlayer from 'react-spotify-web-playback';
+import queryString from 'query-string';
 import '../App.css';
 import FadeIn from 'react-fade-in';
 
@@ -10,6 +13,7 @@ export default class Player extends React.Component {
         super(props);
         this.state={
           currentSongUrl: null,
+          currentURI: null,
           currentSongName: "",
           currentSongArtist: "",
           isLogged: false,
@@ -60,9 +64,11 @@ export default class Player extends React.Component {
 
         this.setState({correct: false, submitted: true})
 
+        let attemptCount = 0
         if(songs.length > 0)
         {
-            while(songs[myCount].url == null)
+            attemptCount++
+            while(songs[myCount].uri == null && attemptCount <= 5)
             {
                 myCount=this.randomNumber(0,songs.length-1);
             }
@@ -139,6 +145,7 @@ export default class Player extends React.Component {
             match: false,
             currentSongUrl:songs[myCount].url,
             currentSongName: songs[myCount].name,
+            currentURI:songs[myCount].uri
 
         })
 
@@ -161,6 +168,7 @@ export default class Player extends React.Component {
             currPosition:myCount,
             currentSongUrl:songs[myCount].url,
             currentSongName: songs[myCount].name,
+            currentURI: songs[myCount].uri,
             correct: false
         }, () => console.log("im setting state"))
 
@@ -171,6 +179,8 @@ export default class Player extends React.Component {
     render() {
 
         let songs = this.props.selectedPlaylist
+        let parsed = queryString.parse(window.location.search); //gets access token
+        let accessToken = parsed.access_token;
 
         if(songs == null)
         {
@@ -188,12 +198,25 @@ export default class Player extends React.Component {
                         <div> <h2> You are a... </h2> <h1 className = "larger"> {this.state.badge} </h1> </div>
                          : null }
                     </div>,
-                    <h2> Score: {this.state.score} </h2>,
+                    <h2 className = "score"> Score: {this.state.score} </h2>,
                     <div> { !this.state.gameOver ?
                         <div id= "player">
-                            <audio className="audioPlayer" controls autoplay src = {this.state.currentSongUrl} onEnded=
+                            <SpotifyPlayer className = "audioPlayer"
+                                styles={{
+                                    bgColor: '#000',
+                                    color: '#fff',
+                                    loaderColor: '#fff',
+                                    sliderColor: '#1cb954',
+                                    savedColor: '#fff',
+                                    trackArtistColor: '#ccc',
+                                    trackNameColor: '#000',
+                                  }}
+                                autoPlay = {true}
+                                token = {accessToken}
+                                uris = {[this.state.currentURI]}/>
+                            {/* <audio className="audioPlayer" controls autoPlay src = {this.state.currentSongUrl} onEnded=
                                 {(e) => this.nextTrack(e,songs)}> {console.log(this.state.currentSongUrl)}
-                            </audio>
+                            </audio> */}
                             {/* <PlayTimer song={this.state.currentSongUrl}/> */}
                             <form onSubmit = {(e) => this.nextTrack(e,songs)}>
                                 <input id = "gameInput"
