@@ -36,7 +36,7 @@ export default class Player extends React.Component {
     componentDidMount() {
         setTimeout(function() {
             this.setState({gameOver: true})
-        }.bind(this),12000)
+        }.bind(this),120000)
     }
 
     /*Generates a random number between min to max*/
