@@ -13,10 +13,12 @@
     "react-countdown-circle-timer": "^2.3.7",
     "react-dom": "^16.13.1",
     "react-fade-in": "^1.1.0",
+    "react-iframe": "^1.8.0",
     "react-player": "^2.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-sidebar": "^3.0.2",
+    "react-spotify-web-playback": "^0.7.0",
     "spotify-web-api-js": "^1.4.0"
   },
   "scripts": {

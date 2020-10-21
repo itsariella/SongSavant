@@ -122,7 +122,8 @@ class Select extends React.Component {
             categoryClicked: true,
             categoryId: category.id,
             myCategories: ["removeCategory"],
-            fetched: true
+            fetched: true,
+            access: parsed.acc
         });
 
         let url = 'https://api.spotify.com/v1/browse/categories/' + category.id + '/playlists?&limit=50'
@@ -145,7 +146,7 @@ class Select extends React.Component {
                     })
                     let allTracksDataPromises
                         = Promise.all(trackDataPromises)
-                        /*get song names, error may occur if track is null? */
+                        /*get song names, error may occur if track is null, all preview urls are null */
                     let playlistPromise = allTracksDataPromises.then(trackDatas => {
 
                         trackDatas.forEach((trackData, i) => {
@@ -158,9 +159,11 @@ class Select extends React.Component {
                                 .map(item => item.track)
                                 .map((trackData) => ({
                                 name: trackData.name,
-                                url: trackData.preview_url,
+                                url: 'trackData.preview_url',
+                                uri: trackData.uri,
                                 artists: trackData.artists
                             }))
+                            console.log(playlists[i])
                         })
                         return playlists
                     })
@@ -252,7 +255,7 @@ class Select extends React.Component {
                             window.location = window.location.href.includes('localhost')
                               ? 'http://localhost:8888/login'
                               : 'https://song-savant.herokuapp.com/login' }} > Different Playlist</button></div> : null}
-                    {this.state.clicked && this.state.renderPlayer ? <Player elementId = "myPlayer" playlist= {this.state.chosenPlaylist} selectedPlaylist = {this.state.songsList}/> : null}
+                    {this.state.clicked && this.state.renderPlayer ? <Player accessToken = {this.state.access} elementId = "myPlayer" playlist= {this.state.chosenPlaylist} selectedPlaylist = {this.state.songsList}/> : null}
                 </div>
             }
 
