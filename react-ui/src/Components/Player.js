@@ -224,8 +224,7 @@ export default class Player extends React.Component {
                                     ref={input => {this.myInput = input;}}
                                     placeholder="Enter song name"
                                     autoFocus
-                                    autoComplete={false}
-                                    >
+                                    autoComplete="off">
 
                                 </input>
                                 <button id="next" type="submit"> next </button>
