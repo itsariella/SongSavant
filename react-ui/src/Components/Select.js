@@ -89,6 +89,7 @@ class Select extends React.Component {
     }
 
     playAgain(playlist) {
+        console.log(this.state.songsList)
         this.setState({
             songsList: playlist.songs,
             categoryClicked: true,
