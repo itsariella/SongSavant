@@ -93,7 +93,7 @@ export default class Player extends React.Component {
             let tempScore=this.state.score + 1;
             if(tempScore >= 20) {
                 this.setState({
-                    badge: "Savant",
+                    badge: "Song Savant",
                     score: this.state.score + 1,
                     correct: true
 
@@ -109,7 +109,7 @@ export default class Player extends React.Component {
             }
             else if(tempScore >= 11) {
                 this.setState({
-                    badge: "Expert",
+                    badge: "Song Expert",
                     score: this.state.score + 1,
                     correct: true
 
