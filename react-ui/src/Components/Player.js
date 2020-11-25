@@ -159,7 +159,7 @@ export default class Player extends React.Component {
         console.log(myCount)
         if(songs.length > 0)
         {
-            while(songs[myCount].url == null)
+            while(songs[myCount].uri == null)
             {
                 myCount = this.randomNumber(0,songs.length-1);
             }
@@ -188,7 +188,7 @@ export default class Player extends React.Component {
         }
         if(songs.length > 0)
         {
-            if(this.state.currentSongUrl === null || this.state.currentSongUrl === '')
+            if(this.state.currentURI === null || this.state.currentURI === '')
             {
                 this.handleAudio(songs)
             }
