@@ -155,6 +155,7 @@ export default class Player extends React.Component {
 
     handleAudio(songs) {
         console.log("handle audio start")
+        console.log(songs)
         let myCount = this.randomNumber(0,songs.length-1)
         console.log(myCount)
         if(songs.length > 0)
@@ -162,6 +163,8 @@ export default class Player extends React.Component {
             while(songs[myCount].uri == null)
             {
                 myCount = this.randomNumber(0,songs.length-1);
+                console.log("looping")
+                console.log(myCount)
             }
         }
         this.setState({
