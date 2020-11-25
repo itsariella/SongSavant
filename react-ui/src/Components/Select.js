@@ -79,7 +79,7 @@ class Select extends React.Component {
         });
 
         setTimeout(function() { //Start the timer
-            this.setState({renderPlayer: true, renderTimer: true}) //After 1 second, set render to true
+            this.setState({renderPlayer: true, renderTimer: true}) //After 3 seconds, set render to true
         }.bind(this), 3000)
 
         setTimeout(function() {
@@ -106,12 +106,12 @@ class Select extends React.Component {
         })
 
         setTimeout(function() { //Start the timer
-            this.setState({renderPlayer: true, renderTimer: true}) //After 1 second, set render to true
+            this.setState({renderPlayer: true, renderTimer: true}) //After 3 seconds, set render to true
         }.bind(this), 3000)
 
         setTimeout(function() {
             this.setState({renderTimer:false, gameOver: true})
-        }.bind(this),12300)
+        }.bind(this),123000)
     }
 
     handleCategory(category) {
@@ -251,7 +251,7 @@ class Select extends React.Component {
                     {!this.state.renderTimer && !this.state.gameOver && this.state.categoryClicked && this.state.clicked ? <div>Game starts in...<Timer limit={3} ></Timer></div> : null}
                     {this.state.categoryClicked && this.state.clicked && this.state.renderTimer? <Timer limit={120}/> : null}
                     {!this.state.renderTimer && this.state.gameOver ? <div> <button id = "replay" onClick={() => {
-                        this.handlePlaylist(this.playAgain(this.state.chosenPlaylist)) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
+                        this.playAgain(this.state.chosenPlaylist) }}> Play Again </button> <button id = "diffPlaylist" onClick={() => {
                             window.location = window.location.href.includes('localhost')
                               ? 'http://localhost:8888/login'
                               : 'https://song-savant.herokuapp.com/login' }} > Different Playlist</button></div> : null}
