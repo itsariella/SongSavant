@@ -15,7 +15,6 @@
   ],
   "dependencies": {
     "express": "^4.16.4",
-    "heroku": "^7.47.4",
     "request": "^2.88.2"
   },
   "repository": {
