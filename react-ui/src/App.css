@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   margin-top: 0 !important;
-  background-color: orange;
+  background-color: rgb(86, 87, 150);
   height: 100%;
   width: 100%;
   overflow: scroll;
@@ -23,8 +23,16 @@
   color: firebrick;
 }
 
-#feedback {
+#Search{
   text-shadow: 2px 2px black;
+  text-align:center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 30px;
+  color: firebrick;
+}
+
+#feedback {
   text-align:left;
   margin: 20px;
   font-size: 15px;
@@ -45,6 +53,7 @@
 {
     width: 400px;
     position: relative;
+    text-align: center;
     left: 50%;
     transform: translate(-50%, 0);
     border-width: 2px;
@@ -72,8 +81,8 @@
 }
 
 a:hover {
-  color: black;
-  text-shadow: 2px 2px white;
+  color: white;
+  text-shadow: 4px 4px black;
 }
 
 body {
@@ -97,13 +106,14 @@ a{
   color:white;
   width: 500px;
   margin: auto;
+  margin-top:0px;
 }
 
-#gameInput {
+/* #gameInput {
   height: fit-content;
   font-size: 12px;
   padding: 10px;
-}
+} */
 
 #prevImg {
   border-radius: 5px;
@@ -316,6 +326,18 @@ input {
     height: 20px;
     margin-top:10px;
     margin-bottom:10px;
+    padding:5px;
+}
+
+#Search input{
+  border-radius: 50px;
+  border: 1px solid black;
+  width: 250px;
+  height: 25px;
+  margin: 5px;
+  margin-top:0px;
+  margin-bottom:10px;
+  padding: 5px;
 }
 
 #next {
@@ -326,4 +348,36 @@ input {
   padding: 10px;
   margin-top:10px;
   margin-bottom:10px;
+}
+
+.songCard:hover,
+.songCard:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#searchButton {
+  text-align:center;
+  border-radius: 40px;
+  width: fit-content;
+  height:fit-content;
+  padding: 5px 5px;
+  font-family: Helvetica, Arial, sans-serif;
+  position: relative;
+  margin: auto;
+  margin-top:20px;
+  display:inline-block;
+}
+
+#spotifyType {
+  text-align:center;
+  border-radius: 40px;
+  width: fit-content;
+  height:fit-content;
+  padding: 5px 5px;
+  font-family: Helvetica, Arial, sans-serif;
+  position: relative;
+  margin: auto;
+  margin-top:20px;
+  display:inline-block;
 }

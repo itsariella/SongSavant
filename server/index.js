@@ -3,6 +3,7 @@ let request = require('request')
 let querystring = require('querystring')
 
 let app = express()
+// app.use(enforce.HTTPS());
 
 let redirect_uri = 
   process.env.REDIRECT_URI || 

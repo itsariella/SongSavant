@@ -7,6 +7,10 @@ import Player from './Player';
 import Title from './Title'
 import Directions from './Directions';
 import '../App.css';
+import Spotify from "spotify-web-api-js";
+import Search from './Search';
+
+const spotify = new Spotify();
 
 
 class Select extends React.Component {
@@ -25,7 +29,9 @@ class Select extends React.Component {
             category: "",
             fetched: false,
             myCategories: ["hiphop", "pop", "toplists", "country", "rock", "rnb", "alternative", "dance", "decades", "christian", "kpop", "blues", "classical","indie","jazz","soul","punk","metal","reggae","funk"],
-            gameOver:false
+            gameOver:false,
+            query: "",
+            type: ["album"],
     };
 
         this.handlePlaylist = this.handlePlaylist.bind(this);
@@ -36,6 +42,7 @@ class Select extends React.Component {
     componentDidMount(){
         let parsed = queryString.parse(window.location.search); //gets access token
         let accessToken = parsed.access_token;
+        spotify.setAccessToken(accessToken);
 
        if(!accessToken)
         return
@@ -65,6 +72,14 @@ class Select extends React.Component {
             })
         })
 
+    }
+
+    async spotifySearchData() {
+        const results = await spotify.search(this.state.query, this.state.type);
+        const albumResults = await spotify.getAlbumTracks(
+          results.albums.items[0].id
+        );
+        console.log(albumResults);
     }
 
     handlePlaylist(playlist) {
@@ -229,7 +244,19 @@ class Select extends React.Component {
 
             {
                 <div id = "game">
-                    {!this.state.categoryClicked && <h3> Select a category:  </h3> }
+
+                    {!this.state.categoryClicked && <h3> Select a category or search:  </h3> }
+                    {!this.state.categoryClicked && <Search
+                    search={this.state.query}
+                    searchUpdate={(e) => this.setState({ query: e.target.value })}
+                    typeUpdate={(e) =>
+                    this.setState((state) => ({
+                        type: [...state.type, e.target.value],
+                    }))
+                    }
+                    searchFunc={() => this.spotifySearchData()}
+                    />}
+                    
                     {this.state.categoryClicked && this.state.isEmptyState && <h3> Select a playlist:  </h3> }
                 </div>
             }
