@@ -311,7 +311,7 @@ class Select extends React.Component {
             }
 
 
-            </div>] : <div className="frontContainer"> <img id ="logo" src={require("../images/Song-SavantLogo.png")}/> <button id="signIn" onClick={() => {
+            </div>] : <div className="frontContainer"> <div id= "Neon"> SONG SAVANT</div> <button id="signIn" onClick={() => {
             window.location = window.location.href.includes('localhost')
               ? 'http://localhost:8888/login'
               : 'https://song-savant.herokuapp.com/login' }

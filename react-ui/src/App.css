@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   margin-top: 0 !important;
-  background-color: rgb(86, 87, 150);
+  background-color: rgb(15, 1, 1);
   height: 100%;
   width: 100%;
   overflow: scroll;
@@ -81,8 +81,7 @@
 }
 
 a:hover {
-  color: white;
-  text-shadow: 4px 4px black;
+  color: rgb(235, 235, 235);
 }
 
 body {
@@ -151,6 +150,7 @@ a{
 }
 
 #signIn {
+  cursor: pointer;
   background-color: black;
   color: white;
   text-align:center;
@@ -341,6 +341,7 @@ input {
 }
 
 #next {
+  cursor: pointer;
   border-radius:40px;
   font-size:12px;
   height: fit-content;
@@ -354,9 +355,11 @@ input {
 .songCard:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.25em);
+  cursor: pointer;
 }
 
 #searchButton {
+  cursor: pointer;
   text-align:center;
   border-radius: 40px;
   width: fit-content;
@@ -370,6 +373,7 @@ input {
 }
 
 #spotifyType {
+  cursor: pointer;
   text-align:center;
   border-radius: 40px;
   width: fit-content;
@@ -380,4 +384,18 @@ input {
   margin: auto;
   margin-top:20px;
   display:inline-block;
+}
+
+@font-face {
+  font-family: 'Neon';
+  src: local('Neon'), url(./fonts/hello-denver-display/hellodenverdisplayregular_v1.6.woff) format('woff');
+}
+
+#Neon {
+  margin-top: 150px;
+  margin-bottom: 20px;
+  font-family: 'Neon';
+  font-size: 100px;
+  color:rgba(255, 255, 255, 1);
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
 }
