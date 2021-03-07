@@ -311,12 +311,12 @@ class Select extends React.Component {
             }
 
 
-            </div>] : <div className="frontContainer"> <div id= "Neon"> SONG SAVANT</div> <button id="signIn" onClick={() => {
+            </div>] : <div className="frontContainer"> <div id= "Neon"> SONG SAVANT</div>  <div id= "desc"> how well do you know your music?</div><button id="signIn" onClick={() => {
             window.location = window.location.href.includes('localhost')
               ? 'http://localhost:8888/login'
               : 'https://song-savant.herokuapp.com/login' }
           }
-          >Sign in with Spotify</button></div>
+          ><h3>SIGN IN WITH <span class="first">S</span>POTIFY</h3></button></div>
             }
         </div>
         );

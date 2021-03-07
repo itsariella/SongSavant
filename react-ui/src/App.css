@@ -133,6 +133,7 @@ a{
 }
 
 #timer {
+  font-family: Neon;
   display:flex;
   position: relative;
   left: 50%;
@@ -147,23 +148,6 @@ a{
   justify-content: 'space-between';
   margin-bottom: 125px;
 
-}
-
-#signIn {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  text-align:center;
-  font-size:20px;
-  border-radius: 40px;
-  width: fit-content;
-  height:fit-content;
-  padding: 12px 28px;
-  font-family: Helvetica, Arial, sans-serif;
-  position: relative;
-  margin: auto;
-  margin-top:20px;
-  display:inline-block;
 }
 
 #logo {
@@ -398,4 +382,236 @@ input {
   font-size: 100px;
   color:rgba(255, 255, 255, 1);
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
+}
+
+body {
+  background: rgb(15, 15, 15);
+}
+
+
+#signIn {
+  
+  padding: 12px 28px;
+  position: relative;
+  width: fit-content;
+  height:fit-content;
+  text-align: center;
+  border-radius: 50px;
+  border: 3px solid rgb(0, 40, 70);
+  cursor: pointer;
+  background-color: black;
+
+  margin: auto;
+  margin-top:20px;
+  color: rgba(10, 120, 0, 0.5);
+}
+
+#signIn h3 {
+  font-family: "Neon", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size:2.9em;
+}
+
+#signIn:hover {
+  animation: border-flicker 2s linear forwards;
+}
+
+#signIn:hover h3 {
+  
+  animation: text-flicker 2s linear forwards;
+
+}
+
+#signIn:hover .first {
+  animation: letter-flicker 3s linear infinite;
+}
+
+#desc {
+  color:rgb(203, 207, 243);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+@keyframes text-flicker {
+  2% { 
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  3% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  6% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  9% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  11% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  14% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  18% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  32% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  33% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  37% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  39% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  43% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  46% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  47% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  100% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+}
+
+@keyframes letter-flicker {
+    2% { 
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  3% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  6% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  9% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  11% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  14% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  18% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  32% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  33% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  37% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  39% {
+    color: rgba(10, 120, 0, 0.5);
+    text-shadow: none;
+  }
+  40% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+  100% {
+    color: rgb(0, 230, 19);
+    text-shadow: 0 0 15px rgb(0, 230, 19);
+  }
+}
+
+@keyframes border-flicker {
+  2% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  3% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  5% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  6% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  7% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  9% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  13% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  16% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  18% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  22% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  34% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  36% {
+    border: 3px solid rgb(0, 40, 70);
+    box-shadow: none;
+  }
+  54% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
+  100% {
+    border: 3px solid rgb(0, 180, 230);
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
+    0 0 12px -1px rgb(0, 180, 230) inset;
+  }
 }
